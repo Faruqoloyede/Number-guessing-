@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Number guessing Game</h1>
-    <p class="info">You have 5 attempts remaining</p>
-    <div class="container">
-        <p class="container_text">Enter a number between 1 and 100</p>
-        <input type="text" class="input" />
-        <p class="wrong">Too low! try again😩</p>
-    </div>
-   <button type="button" class="guess_btn">Guess</button>
+    
+   <div class="wrapper">
+        <h1>Number guessing Game</h1>
+        <p class="info">You have 5 attempts remaining</p>
+        <div class="container">
+            <p class="container_text">Enter a number between 1 and 100</p>
+            <input type="text" class="input" />
+            <p class="wrong">Too low! try again😩</p>
+        </div>
+    <button type="button" class="guess_btn">Guess</button>
+   </div>
+    <div class="error">
+        <p>opps you've finished your attempt</p>
+        <!-- image -->
+         <img src="/img/fail.png" alt="fail">
+         <button class="try_btn">try again</button>
+     </div>
     <script src="/index.js"></script>
 </body>
 </html>
