@@ -11,6 +11,7 @@ const try_btn = document.querySelector('.try_btn');
 const info = document.querySelector('.info');
 const win = new Audio('win.wav');
 const fail = new Audio('fail.mp3');
+const wrongsound = new Audio('wrongsound.mp3');
 
 const min = 1;
 const max = 10;
@@ -23,6 +24,8 @@ const resetGame = ()=>{
     if(max_attempt === 0){
         wrapper.style.display='none';
         error.style.display = 'flex'
+        wrongsound.currentTime = 0;
+        wrongsound.pause();
         fail.currentTime = 0;
         fail.play();
     }else{
@@ -72,12 +75,16 @@ guess_btn.addEventListener('click', ()=>{
         input.value = '';
         max_attempt--
         info.textContent = `You have ${max_attempt} attempts remaining`
+        wrongsound.currentTime = 0;
+        wrongsound.play();
     } else if(toNumber > guess){
        wrong.textContent = 'too high 😩try again'
         wrong.style.backgroundColor = '#FFCDD2';
         input.value = '';
         max_attempt--
-        info.textContent = `You have ${max_attempt} attempts remaining`
+        info.textContent = `You have ${max_attempt} attempts remaining`;
+        wrongsound.currentTime = 0;
+        wrongsound.play();
     }
 
     resetGame();
